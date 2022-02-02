@@ -5,8 +5,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8080
 
-const client = new MongoClient("mongodb+srv://varipvn4nv:performancetesting@cluster0.a0z6h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-
+const client = new MongoClient(process.env.MONGO_URI)
 
 app.get('/hello', (req, res) => {
   res.status(200).json({ hello: "World" })
